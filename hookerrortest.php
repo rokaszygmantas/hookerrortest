@@ -21,12 +21,12 @@ class HookErrorTest extends Module
 
     public function hookActionAfterCreateCustomerFormHandler()
     {
-        throw new \PrestaShop\PrestaShop\Core\Exception\ModuleException('Error message from module, thrown after handling customer creation');
+        throw new \PrestaShop\PrestaShop\Core\Exception\ModuleHookException('Error message from module, thrown after handling customer creation');
     }
 
     public function hookActionBeforeUpdateCustomerFormHandler()
     {
-        throw \PrestaShop\PrestaShop\Core\Exception\ModuleException::buildWithMessages([
+        throw \PrestaShop\PrestaShop\Core\Exception\ModuleHookException::buildWithMessages([
             'Multiple(1) error messages from module, thrown before handling customer update',
             'Multiple(2) error message from module, thrown before handling customer update',
             'Multiple(3) error message from module, thrown before handling customer update',
